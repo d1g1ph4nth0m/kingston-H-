@@ -1,48 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>agrinho</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="icon" type="image/x-icon" href="logo1.png">
+    <title>LOJA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <div class="name">Storelo</div>
+                <i class="fa-solid fa-basket-shopping"></i>
+            </div>
+            <div class="bars">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="nav-menu">
+                <ul class="nav-items ">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+
+            <div class="icons">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-regular fa-heart"></i>
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </nav>
+    </header>
+
     <div class="container">
-        <p>Bem-vindos!</p>
+        <div class="side-one">
+            <div class="type">Apple watch</div>
+            <h3>Aluminum</h3>
+            <div class="big-thin">Case With</div>
+            <div class="wrapper">
+                <img class="spring" src="spring.png" alt="">
+                <div class="small-bold">Solo loop</div>
+                <div class="price">From $339</div>
+                <div class="buttons">
+                    <button>buy now</button>
+                    <button>explore more</button>
+                </div>
+            </div>
+        </div>
 
-    </div>
+        <div class="side-two">
+            <div class="sparks">
+                <img src="sparks.png" alt="">
+            </div>
 
-    <div class="loading-page">
-        <svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <div class="watch">
+                <img src="white.png" alt="" class=" show image img-1">
+                <img src="blue.png" alt="" class="image img-2">
+                <img src="red.png" alt="" class="image img-3">
+                <img src="green.png" alt="" class="image img-4">
+                <img src="light-blue.png" alt="" class="image img-5">
+                <img src="yellow.png" alt="" class="image img-6">
+                <img src="light-green.png" alt="" class="image img-7">
+                
+            </div>
 
-            <path
-          d="M272 96c-78.6 0-145.1 51.5-167.7 122.5c33.6-17 71.5-26.5 111.7-26.5l88 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-16 0-72 0s0 0 0 0c-16.6 0-32.7 1.9-48.3 5.4c-25.9 5.9-49.9 16.4-71.4 30.7c0 0 0 0 0 0C38.3 298.8 0 364.9 0 440l0 16c0 13.3 10.7 24 24 24s24-10.7 24-24l0-16c0-48.7 20.7-92.5 53.8-123.2C121.6 392.3 190.3 448 272 448l1 0c132.1-.7 239-130.9 239-291.4c0-42.6-7.5-83.1-21.1-119.6c-2.6-6.9-12.7-6.6-16.2-.1C455.9 72.1 418.7 96 376 96L272 96z"/></svg>
-        </svg>
-
-
-        <div class="name-container">
-            <div class="logo-name">AgroTech.</div>
+            <div class="colors">
+                <span class="active" data-value="1"></span>
+                <span data-value="2"></span>
+                <span data-value="3"></span>
+                <span data-value="4"></span>
+                <span data-value="5"></span>
+                <span data-value="6"></span>
+                <span data-value="7"></span>
+                <div class="line"></div>
+                <p>band colors</p>
+            </div>
         </div>
     </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
-    integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="index.js"></script>
-
-
-
-
-<script type="text/javascript">
-
-    setTimeout(function () {
-        window.location.href = "index1.html";
-    }, 5500);
-
-</script>
-
+<script src="./script.js"></script>
 </html>
