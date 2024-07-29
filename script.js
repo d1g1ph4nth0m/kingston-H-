@@ -1,166 +1,102 @@
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
-gsap.from('.logo div',{
-    opacity:0,
-    delay:1,
-    x:20
-} )
-
-const menu_items = document.querySelector('.menu-items')
-gsap.from(menu_items.children ,{
-    opacity:0,
-    x:0,
-    duration:1,
-    delay:1.5,
-    stagger:{
-        amount:1
-    }
+ScrollTrigger.defaults({
+  toggleActions:"play none none reverse"
 })
 
 
-gsap.utils.toArray('.star').forEach(star=>{
-    gsap.fromTo(star,{
-        rotation:450,
-        opacity:0,
-        y:100
-    },{
-        rotation:0,
-        opacity:1,
-        y:0,
-        duration:1,
-        delay:1.5,
-        scrollTrigger:star
-    })
+gsap.to('.img-container',{
+  scale:52,
+  ease:"ease",
+  scrollTrigger:{
+    trigger:'.video-section',
+    scrub:1,
+    start:"top top",
+    end:"bottom",
+    pin:true
+  }
 })
 
 
-gsap.utils.toArray('.title').forEach(title=>{
-    gsap.fromTo(title,{
-        letterSpacing:'10px',
-        opacity:0,
-        x:300,
-        skewX:65
-    },{
-        letterSpacing:'0',
-        opacity:1,
-        x:0,
-        skewX:0,
-        duration:1,
-        delay:.5,
-        scrollTrigger:title
-    })
+gsap.to('.right' ,{
+  autoAlpha:0,
+  x:500,
+  duration:1.5,
+  scrollTrigger:{
+    start:1
+  }
 })
-
-gsap.utils.toArray('p').forEach(p=>{
-    gsap.fromTo(p,{
-        opacity:0,
-        x:150,
-        skewX:30
-    },{
-        opacity:1,
-        x:0,
-        skewX:0,
-        duration:1,
-        delay:.5,
-        scrollTrigger:p
-
-    })
+gsap.to('.left' ,{
+  autoAlpha:0,
+  x:-500,
+  duration:1.5,
+  scrollTrigger:{
+    start:1
+  }
 })
 
 
-gsap.utils.toArray('button').forEach(button=>{
-    gsap.fromTo(button,{
-        opacity:0,
-    },{
-        opacity:1,
-        duration:1,
-        delay:1,
-        scrollTrigger:button
-
-    })
+gsap.to('.txt-bottom',{
+  autoAlpha:0,
+  letterSpacing:-10,
+  duration:2,
+  scrollTrigger:{
+    start:2
+  }
 })
 
 
-gsap.from('.pyramid' ,{
-    opacity:0,
-    scale:.5,
-    duration:1,
-    delay:.5
+const tl = gsap.timeline();
+
+tl.from('.left-side div',{
+  y:150,
+  opacity:0,
+  stagger:{
+    amount:.4
+  },
+  delay:.5
+}).from('.right-side',{opacity:0,duration:2},.5)
+.to('.wrapper' ,{x:-window.innerWidth})
+
+
+
+ScrollTrigger.create({
+  animation:tl,
+  trigger:'.wrapper',
+  start:"top top",
+  end:"+=600",
+  scrub:1,
+  pin:true,
+  ease:"ease"
 })
 
-gsap.fromTo('.hand',{
-    scale:.2,
-    opacity:0,
-    skewY:30
-},{
-    scale:1,
+
+
+gsap.utils.toArray('.col').forEach(image=>{
+  gsap.fromTo(image,{
+    opacity:.3,
+    x:0
+  },{
     opacity:1,
-    skewY:0,
-    duration:1,
-    delay:.5,
-    scrollTrigger:'.hand'
-})
-
-
-
-gsap.utils.toArray('.line').forEach(line=>{
-    gsap.fromTo(line,{
-        opacity:0,
-        width:'0%'
-    },{
-        opacity:1,
-        width:'100%',
-        duration:1,
-        delay:1,
-        scrollTrigger:line
-
-    })
-})
-
-
-gsap.utils.toArray('.rotation').forEach(rotate=>{
-    gsap.fromTo(rotate,{
-        opacity:0,
-        rotation:350,
-        scale:.2
-    },{
-        opacity:1,
-        rotation:0,
-        scale:1,
-        duration:1,
-        delay:1,
-        scrollTrigger:rotate
-
-    })
-})
-
-
-gsap.fromTo('.card' ,{
-    opacity:0,
-    scale:.1,
-},{
-    opacity:1,
-    scale:1,
-    duration:1,
-    delay:.5,
-    stagger:{
-        amount:1
-    },
-    scrollTrigger:'.card'
-})
-
-const menu = document.querySelector('.menu')
-
-
-gsap.from(menu.children,{
-    opacity:0,
-    x:50,
-    duration:1,
-    delay:.5,
-    stagger:{
-        amount:1
-    },
+    x:-50,
     scrollTrigger:{
-        trigger:menu.children
+      trigger:image,
+      start:"10%",
+      stagger:{
+        amount:.4
+      }
     }
+  })
+})
+
+const timeline = gsap.timeline();
+
+timeline.from('.title span' ,{
+  y:150,
+  skewY:7,
+  duration:3
+}).from('.txt-bottom',{
+  letterSpacing:-10,
+  opacity:0,
+  duration:3
 })
